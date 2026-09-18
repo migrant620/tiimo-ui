@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Tiimo UI Prototype",
+    "slug": "tiimo-ui",
+    "scheme": "tiimo-ui",
+    "version": "0.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "platforms": [
+      "web"
+    ]
+  }
+}
