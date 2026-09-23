@@ -5,7 +5,7 @@
     "scheme": "tiimo-ui",
     "version": "0.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "web": {
       "bundler": "metro",
       "output": "single"
