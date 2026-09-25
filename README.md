@@ -79,6 +79,10 @@ npm run build:web
 
 The static output is written to `dist/`. Serve that directory over HTTP or HTTPS; opening `index.html` directly as a local file is not supported.
 
+## Demo build
+
+The published demo at <https://tiimo-ui.edgeone.cool> is built from this repository. It was last rebuilt and redeployed on 2026-09-25 (EdgeOne deployment `dpb0cieizzl6`, source revision `63e2b3dd`).
+
 ## Scope and limitations
 
 - **First batch of screens.** This edition covers the Today plan, the task action menu, the Update-task sheet, the focus timer and the delete confirmation. The To-do list, Repeat picker and quick-create sheet are included but belong to the next batch and have not yet been refined to the same standard.
