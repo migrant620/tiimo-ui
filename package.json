@@ -1,0 +1,30 @@
+{
+  "name": "tiimo-ui",
+  "version": "0.0.0",
+  "private": true,
+  "description": "An independent, interactive Tiimo UI prototype built with Expo, React Native, and TypeScript. Noncommercial study and research only.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "web": "expo start --web",
+    "build:web": "expo export --platform web",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "expo": "57.0.21",
+    "expo-font": "57.0.3",
+    "expo-status-bar": "57.0.1",
+    "expo-system-ui": "57.0.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "5.7.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "0.21.2"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "6.0.3"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}

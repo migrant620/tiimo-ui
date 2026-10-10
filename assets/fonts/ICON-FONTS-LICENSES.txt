@@ -1,0 +1,6 @@
+Icon fonts, copied from @expo/vector-icons 15.0.2 (MIT).
+
+MaterialCommunityIcons.ttf  Pictogrammers Material Design Icons - Apache License 2.0
+Feather.ttf                 Feather by Cole Bemis - MIT License
+AntDesign.ttf               Ant Design Icons - MIT License
+FontAwesome.ttf             Font Awesome 4.7 by Dave Gandy - SIL OFL 1.1 (font)
