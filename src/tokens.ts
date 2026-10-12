@@ -131,83 +131,83 @@ const serif = (recoletaSize: number, lineHeight: number) => ({
  */
 export const type = {
   /** "Wednesday": Recoleta 28 in a 36 dp box. */
-  dateTitle: serif(28, 36),
+  dateTitle: serif(26.6, 34.2),
   /**
    * Uppercase labels share an 8.73 dp cap height (=> 12.3) and are tracked out;
    * the tracking is what the box width leaves over: 0.39 for the month, ~0.89 for
    * section pills and SUGGEST BREAKDOWN. A 14 dp untracked face matched the widths
    * too, but its caps stood 1.1 dp taller than the reference's.
    */
-  monthCaption: { fontFamily: fonts.regular, fontSize: 12.3, lineHeight: 16, letterSpacing: 0.39 },
+  monthCaption: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.39 },
   /**
    * Weights were checked by ink mass (sum of darkness inside the text box, web vs
    * reference): a same-weight pair reads ~1.02, medium against regular ~1.3.
    */
   /** "ANYTIME (0)": 81.1 dp => 14, regular (medium read 1.37), 16 dp box. */
-  section: { fontFamily: fonts.regular, fontSize: 12.3, lineHeight: 16, letterSpacing: 0.89 },
+  section: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.89 },
   /** Placeholder copy "Anytime today works": 122.3 dp => 13, regular (medium read 1.22), 16 dp box. */
-  placeholder: { fontFamily: fonts.regular, fontSize: 13.15, lineHeight: 16 },
+  placeholder: { fontFamily: fonts.regular, fontSize: 13.87, lineHeight: 16.88 },
   /** Menu rows and form values ("Make a copy", "No repeat"): 20 dp box. */
-  body: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 20 },
+  body: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 21.1 },
   /** "GET PRO", "Move to list": 14.5 medium (regular read 0.84) in a 20 dp box. */
-  button: { fontFamily: fonts.medium, fontSize: 14.5, lineHeight: 20 },
+  button: { fontFamily: fonts.medium, fontSize: 15.3, lineHeight: 21.1 },
   /** Action-menu rows: ink "Make a copy" 80.4 dp => 14.5, regular, 20 dp box. */
-  menuRow: { fontFamily: fonts.regular, fontSize: 14.5, lineHeight: 20 },
+  menuRow: { fontFamily: fonts.regular, fontSize: 15.3, lineHeight: 21.1 },
   /** Filled dialog/focus buttons ("Cancel", "Delete", "Create task") read medium. */
-  buttonStrong: { fontFamily: fonts.medium, fontSize: 14.5, lineHeight: 20 },
+  buttonStrong: { fontFamily: fonts.medium, fontSize: 15.3, lineHeight: 21.1 },
   /** "P0-Mainline-Task" card title: ink 111.6 dp => 14.3 medium, 17.1 dp box. */
-  taskTitle: { fontFamily: fonts.medium, fontSize: 14.3, lineHeight: 17.1 },
+  taskTitle: { fontFamily: fonts.medium, fontSize: 15.09, lineHeight: 18.04 },
   /** "30min": 33.8 dp => 12, 14.2 dp box. */
-  caption: { fontFamily: fonts.regular, fontSize: 12, lineHeight: 14 },
+  caption: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 14.77 },
   /** Form field labels ("Time of day", "Repeat"): 16 dp box. */
-  fieldLabel: { fontFamily: fonts.regular, fontSize: 13.5, lineHeight: 16 },
+  fieldLabel: { fontFamily: fonts.regular, fontSize: 14.24, lineHeight: 16.88 },
   /** Sheet heading "Update task" and group titles ("Sub-tasks"): 24 dp box. */
-  heading: { fontFamily: fonts.medium, fontSize: 16.3, lineHeight: 24 },
+  heading: { fontFamily: fonts.medium, fontSize: 17.2, lineHeight: 25.32 },
   /** "Create a task to start focus": 24 dp box. */
-  subtitle: { fontFamily: fonts.regular, fontSize: 16.4, lineHeight: 24 },
+  subtitle: { fontFamily: fonts.regular, fontSize: 17.3, lineHeight: 25.32 },
   /** Focus page task title: Recoleta in a 36 dp box. */
-  focusTitle: serif(28, 36),
+  focusTitle: serif(26.6, 34.2),
   /** "Delete task?": ink 126.9 dp wide => Fraunces 22.6, 32.8 dp box. */
-  dialogTitle: { fontFamily: fonts.serif, fontSize: 22.6, lineHeight: 32.8 },
+  dialogTitle: { fontFamily: fonts.serif, fontSize: 21.47, lineHeight: 31.16 },
   /** Timer digits are Recoleta 45 in a 52 dp box; Fraunces digits run the same width. */
-  timerDigits: { fontFamily: fonts.serif, fontSize: 45, lineHeight: 52 },
+  timerDigits: { fontFamily: fonts.serif, fontSize: 42.75, lineHeight: 49.4 },
   /** Start/end times "09:24 AM": 68.8 dp => 16, 20 dp box. */
-  timeRange: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 20 },
+  timeRange: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 21.1 },
   /** Weekday letter: ~9.4 dp, bold, 12.4 dp box. */
-  weekdayLetter: { fontFamily: fonts.bold, fontSize: 9.4, lineHeight: 12.4 },
+  weekdayLetter: { fontFamily: fonts.bold, fontSize: 9.92, lineHeight: 13.08 },
   /** Day number is Recoleta (proportional figures: "17" is narrower than "16"); Fraunces 17.1 keeps the 17.1 dp width. */
-  weekdayNumber: { fontFamily: fonts.serif, fontSize: 17.1, lineHeight: 27.3 },
+  weekdayNumber: { fontFamily: fonts.serif, fontSize: 16.25, lineHeight: 25.93 },
   /** Small caps actions: "SUGGEST BREAKDOWN" 13.5 medium; "ADD SUB-TASK" 12 medium. */
-  smallCaps: { fontFamily: fonts.regular, fontSize: 12.3, lineHeight: 16, letterSpacing: 0.86 },
-  smallCapsMuted: { fontFamily: fonts.medium, fontSize: 12, lineHeight: 16 },
+  smallCaps: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.86 },
+  smallCapsMuted: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
   /** Update-task sheet, sizes from ink widths on 03-edit-form.png. */
-  floatLabel: { fontFamily: fonts.regular, fontSize: 12, lineHeight: 13.8, paddingHorizontal: 12.25 },
-  edgeLabel: { fontFamily: fonts.regular, fontSize: 12, lineHeight: 16, paddingHorizontal: 4.2 },
-  fieldValue: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 21.5 },
-  nameInput: serif(18.45, 24),
-  toggleTitle: { fontFamily: fonts.regular, fontSize: 14.7, lineHeight: 20 },
-  toggleCaption: { fontFamily: fonts.regular, fontSize: 12.8, lineHeight: 16 },
-  notes: { fontFamily: fonts.medium, fontSize: 14.3, lineHeight: 18 },
+  floatLabel: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 14.56, paddingHorizontal: 12.25 },
+  edgeLabel: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 16.88, paddingHorizontal: 4.2 },
+  fieldValue: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 22.68 },
+  nameInput: serif(17.53, 22.8),
+  toggleTitle: { fontFamily: fonts.regular, fontSize: 15.51, lineHeight: 21.1 },
+  toggleCaption: { fontFamily: fonts.regular, fontSize: 13.5, lineHeight: 16.88 },
+  notes: { fontFamily: fonts.medium, fontSize: 15.09, lineHeight: 18.99 },
   /**
    * Title of a small picker card (e.g. the Repeat picker). Measured on
    * runs/p1-capture-20260917/raw/p1-repeat.png: ~24 px, semibold.
    */
-  pickerTitle: { fontFamily: fonts.medium, fontSize: 24, lineHeight: 33 },
+  pickerTitle: { fontFamily: fonts.medium, fontSize: 25.32, lineHeight: 34.81 },
   /** Quick-create sheet input, measured on source/p1-quickcreate.png: ~17 px. */
-  quickCreateInput: { fontFamily: fonts.regular, fontSize: 17, lineHeight: 20 },
+  quickCreateInput: { fontFamily: fonts.regular, fontSize: 17.93, lineHeight: 21.1 },
   /** Meta-row chip labels, measured: 9 px cap height => ~13 px. */
-  chipLabel: { fontFamily: fonts.medium, fontSize: 13, lineHeight: 15, letterSpacing: 0.4 },
+  chipLabel: { fontFamily: fonts.medium, fontSize: 13.71, lineHeight: 15.82, letterSpacing: 0.4 },
   /**
    * Day picker, measured on the captured date round-trip (a day chosen then
    * saved). "Select date" is a small medium label; the chosen day below it is
    * serif ("16 Sept"); the month header is medium; the weekday letters and day
    * numbers are regular.
    */
-  calendarSelect: { fontFamily: fonts.medium, fontSize: 13, lineHeight: 16 },
-  calendarDate: serif(24, 33),
-  calendarMonth: { fontFamily: fonts.medium, fontSize: 15, lineHeight: 20 },
-  calendarWeekday: { fontFamily: fonts.medium, fontSize: 12, lineHeight: 16 },
-  calendarDay: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 20 },
+  calendarSelect: { fontFamily: fonts.medium, fontSize: 13.71, lineHeight: 16.88 },
+  calendarDate: serif(22.8, 31.35),
+  calendarMonth: { fontFamily: fonts.medium, fontSize: 15.82, lineHeight: 21.1 },
+  calendarWeekday: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
+  calendarDay: { fontFamily: fonts.regular, fontSize: 15.82, lineHeight: 21.1 },
 } as const;
 
 /**
