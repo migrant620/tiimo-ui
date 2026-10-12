@@ -74,7 +74,7 @@ rounded:
 
 ## Overview
 
-Designed for a 393 dp wide phone frame, English, light theme, default font scale. This document covers the first release batch only — the Today plan (empty, with a task, DONE expanded), the task action menu, the Update-task sheet, the focus timer (running, paused, empty) and the delete confirmation. It is not a complete system for every Tiimo screen.
+Based on Tiimo Android 1.9.2, English, light theme, default font scale, on a 393 dp wide phone frame. This document covers the first release batch only — the Today plan (empty, with a task, DONE expanded), the task action menu, the Update-task sheet, the focus timer (running, paused, empty) and the delete confirmation. It is not a complete system for every Tiimo screen.
 
 ## Colors
 
@@ -82,7 +82,7 @@ Pages sit on `surface`; sheets and menus on `sheet`; raised controls (GET PRO, h
 
 ## Typography
 
-Sans text is Roboto throughout. The app's serif (date headline, focus title, day numbers, timer digits, the task-name field) is Recoleta, a commercial face; this prototype substitutes the open Fraunces and scales it so string widths match. Uppercase labels are small (12.3) and tracked out rather than set large. Weights are regular except task titles, sheet headings and buttons (medium).
+Sans text is Roboto throughout — the Android system face the app renders with. The app's serif (date headline, focus title, day numbers, timer digits, the task-name field) is Recoleta, a commercial face; this prototype substitutes the open Fraunces and scales it so string widths match. Uppercase labels are small (12.3) and tracked out rather than set large. Weights are regular except task titles, sheet headings and buttons (medium).
 
 ## Layout
 
@@ -98,11 +98,11 @@ Pills are fully rounded; cards 14 dp; form fields 14 dp with a 1 dp `#EDEBE9` bo
 
 ## Components
 
-Today sections collapse and expand; an empty section shows its own prompt ("Anytime today works") and an add disc; a populated section adds a round add control to its pill row. Task cards carry a marker chip, title, duration and a completion ring; completed tasks move to DONE with undo. The action menu lists Make a copy, Move to list, Reschedule task, Reschedule for tomorrow, Suggest breakdown, Start task, Edit task and Delete task. The Update-task sheet holds Task name (serif) with its marker, Time of day, Date and Duration (m), Repeat, one card for Sub-tasks and Sub-task timers, notes, and delete / start / Move to list. The focus timer shows the task title and start → end times, a lavender ring around a disc in the task colour, and the countdown in serif digits; a purple arc grows clockwise from the top as time passes, one full turn per task duration, with a white arrow at its head. Icons use open icon families (Material Design Icons, Feather, Ant Design, Font Awesome 4).
+Today sections collapse and expand; an empty section shows its own prompt ("Anytime today works") and an add disc; a populated section adds a round add control to its pill row. Task cards carry a marker chip, title, duration and a completion ring; completed tasks move to DONE with undo. The action menu lists Make a copy, Move to list, Reschedule task, Reschedule for tomorrow, Suggest breakdown, Start task, Edit task and Delete task. The Update-task sheet holds Task name (serif) with its marker, Time of day, Date and Duration (m), Repeat, one card for Sub-tasks and Sub-task timers, notes, and delete / start / Move to list. The focus timer shows the task title and start → end times, a lavender ring around a disc in the task colour, and the countdown in serif digits; a purple arc grows clockwise from the top as time passes, one full turn per task duration, with a white arrow at its head. Icons use the same open icon families the app ships (Material Design Icons, Feather, Ant Design, Font Awesome 4).
 
 ## Do's and Don'ts
 
-Use real text, inputs and stateful controls with local data. Never ship screenshots of the app or proprietary artwork: the avatar is a plain gradient stand-in and the serif is an open substitute. Do not add controls the free tier does not show (there is no +1 / add-time button).
+Use real text, inputs and stateful controls with local data. Never ship screenshots of the app, crops or proprietary artwork: the avatar is a plain gradient stand-in and the serif is an open substitute. Do not add controls the free tier does not show (there is no +1 / add-time button).
 
 ## Responsive Behavior
 
@@ -118,4 +118,4 @@ Change a value in `src/tokens.ts`, rebuild, and recheck every screen that uses i
 - Serif: Fraunces stands in for Recoleta; widths match, stroke weight differs slightly.
 - A few vector icons (To-do and Focus navigation icons, time-of-day pill icons, the breakdown icon) are drawn approximations.
 - Timer completion (reaching 00:00) is not modelled yet.
-- To-do list, Repeat picker and quick-create sheet belong to the next batch and have not yet been brought up to the current tokens.
+- To-do list, Repeat picker and quick-create sheet belong to the next batch and have not been rechecked against the current tokens.

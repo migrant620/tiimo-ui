@@ -1,0 +1,64 @@
+M620 Study and Research License 1.0
+
+Copyright (c) 2026 M620
+
+1. Scope
+
+This license applies to original code and other materials in this distribution
+to the extent that M620 holds the rights to license them (the "Materials").
+Third-party components, fonts, and other separately identified materials retain
+their own licenses. This license does not restrict rights granted to you by
+those third-party licenses. See public/third-party-notices.txt.
+
+2. Permitted purposes
+
+You may view, download, copy, run locally, and modify the Materials solely for
+your own noncommercial learning, study, and research. You may share or fork
+copies solely for those same purposes, provided that you retain this license,
+the copyright notice, and all applicable third-party notices; clearly identify
+your modifications; and grant recipients no broader rights to the Materials.
+
+3. Uses not permitted
+
+No commercial use is granted. In particular, you may not use any substantial
+part of the Materials in a commercial or commercially intended product,
+service, template, component library, or business operation; in client work or
+deliverables, whether paid or unpaid; or for sales, advertising, monetized
+content, or commercial product development or evaluation. Providing something
+free of charge does not by itself make the use noncommercial.
+
+You may not offer the Materials or a derivative as a hosted application or
+service for others to use, except when separately authorized by M620. Sharing
+source for the limited study purposes in section 2 is permitted; representing
+the work as your own original product or as an official Suno product is not.
+
+Any use beyond section 2 requires a separate express written license from
+M620. No commercial license is granted by a repository being public, by access
+to a demonstration, or by payment to a third party.
+
+4. Attribution and other rights
+
+Do not remove or obscure the copyright, license, attribution, or independent-
+prototype notices. No trademark, endorsement, or affiliation rights are
+granted. Rights in third-party brands and materials belong to their respective
+owners. Materials not included in this distribution are not licensed here.
+
+5. Termination
+
+The permissions under this license terminate automatically if you violate its
+terms. After termination, stop using and distributing the Materials and delete
+your copies, except copies that applicable law requires you to retain. This
+does not terminate independently granted rights in third-party components.
+
+6. No warranty; limitation of liability
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NONINFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+LAW, M620 SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY
+ARISING FROM THE MATERIALS OR THEIR USE.
+
+7. Reserved rights
+
+All rights not expressly granted are reserved. This is a restricted,
+source-available license, not an open-source license.

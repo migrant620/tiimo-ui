@@ -1,3 +1,13 @@
+/**
+ * Task cards and empty-section placeholder rows.
+ *
+ * Measured: cards span x16..377 (361 wide) and 48 dp tall with a 14 dp radius.
+ * A populated card is solid white with a 34 dp marker chip at the left; tapping
+ * the row opens the action menu and tapping the completion ring at the right edge
+ * toggles completion. An empty section shows a transparent card with a dashed
+ * #E0E0E0 border, the section's own placeholder copy in `muted`, and an add
+ * control in a light circular well at the right.
+ */
 import * as React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { CompletionCircle } from './Glyphs';
@@ -5,12 +15,18 @@ import { Icon } from './Icon';
 import { colors, space, type as typo } from '../tokens';
 import { PLACEHOLDER_COPY } from '../model';
 import type { Task, TimeOfDay } from '../model';
-export function TaskRow({ task, onToggleComplete, onOpenMenu, }: {
-    task: Task;
-    onToggleComplete: () => void;
-    onOpenMenu: () => void;
+
+export function TaskRow({
+  task,
+  onToggleComplete,
+  onOpenMenu,
+}: {
+  task: Task;
+  onToggleComplete: () => void;
+  onOpenMenu: () => void;
 }) {
-    return (<Pressable accessibilityRole="button" accessibilityLabel={task.title} onPress={onOpenMenu} style={styles.card}>
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={task.title} onPress={onOpenMenu} style={styles.card}>
       <View style={styles.chip}>
         <Text style={styles.chipGlyph}>{task.marker ?? ''}</Text>
       </View>
@@ -20,71 +36,102 @@ export function TaskRow({ task, onToggleComplete, onOpenMenu, }: {
         </Text>
         <Text style={styles.caption}>{`${task.durationMin}min`}</Text>
       </View>
-      <Pressable accessibilityRole="button" accessibilityLabel={task.done ? 'Undo completion' : 'Complete task'} accessibilityState={{ checked: task.done }} hitSlop={12} onPress={onToggleComplete} style={styles.circleSlot}>
-        {task.done ? (<View style={styles.doneDisc}>
-            <Icon name="check" size={15.3} lineHeight={16} color={colors.card}/>
-          </View>) : (<CompletionCircle size={21.1} strokeWidth={2.4} color={colors.ink}/>)}
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={task.done ? 'Undo completion' : 'Complete task'}
+        accessibilityState={{ checked: task.done }}
+        hitSlop={12}
+        onPress={onToggleComplete}
+        style={styles.circleSlot}
+      >
+        {task.done ? (
+          <View style={styles.doneDisc}>
+            <Icon name="check" size={15.3} lineHeight={16} color={colors.card} />
+          </View>
+        ) : (
+          <CompletionCircle size={21.1} strokeWidth={2.4} color={colors.ink} />
+        )}
       </Pressable>
-    </Pressable>);
+    </Pressable>
+  );
 }
-export function PlaceholderRow({ section, onQuickAdd, }: {
-    section: TimeOfDay;
-    onQuickAdd: () => void;
+
+export function PlaceholderRow({
+  section,
+  onQuickAdd,
+}: {
+  section: TimeOfDay;
+  onQuickAdd: () => void;
 }) {
-    return (<Pressable accessibilityRole="button" accessibilityLabel={`Add task to ${section}`} onPress={onQuickAdd} style={styles.placeholderCard}>
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Add task to ${section}`}
+      onPress={onQuickAdd}
+      style={styles.placeholderCard}
+    >
       <Text style={styles.placeholder}>{PLACEHOLDER_COPY[section]}</Text>
       <View style={styles.plusWell}>
         <View style={styles.plusDisc}>
-            <Icon name="plusThin" size={14.2} lineHeight={14.6} color={colors.plusInk}/>
+            <Icon name="plusThin" size={14.2} lineHeight={14.6} color={colors.plusInk} />
           </View>
       </View>
-    </Pressable>);
+    </Pressable>
+  );
 }
+
+// Reference bounds: card x16 w361 h48.8; marker glyph centred at x43.8 on a
+// 31 dp disc; title box x67.3 (17.1 tall) with the duration box directly under it
+// (14.2 tall) in ink, not muted. The placeholder copy starts 13.8 dp in and its
+// add glyph is centred at x353.9, i.e. a 34.2 dp well 6 dp from the right edge.
 const styles = StyleSheet.create({
-    card: {
-        height: space.cardHeight,
-        backgroundColor: colors.card,
-        borderRadius: space.cardRadius,
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingLeft: 12.3,
-        paddingRight: 6,
-        marginTop: space.pillToCard,
-    },
-    chip: {
-        width: 31,
-        height: 31,
-        borderRadius: 15.5,
-        backgroundColor: colors.discBlue,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    chipGlyph: { fontSize: 15.2, lineHeight: 19.3 },
-    text: { flexShrink: 1, marginLeft: 8, justifyContent: 'center' },
-    title: { ...typo.taskTitle, color: colors.ink },
-    caption: { ...typo.caption, color: colors.ink },
-    circleSlot: { marginLeft: 'auto', marginRight: 6.8, width: 20, height: 20, alignItems: 'center', justifyContent: 'center' },
-    placeholderCard: {
-        height: space.cardHeight,
-        borderRadius: space.cardRadius,
-        borderWidth: space.dashWidth,
-        borderStyle: 'dashed',
-        borderColor: colors.dash,
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingLeft: 13.8 - space.dashWidth,
-        paddingRight: 6 - space.dashWidth,
-        marginTop: space.pillToCard,
-    },
-    placeholder: { ...typo.placeholder, color: colors.muted, flex: 1 },
-    doneDisc: { width: 20, height: 20, borderRadius: 10, backgroundColor: colors.primary, alignItems: 'center', justifyContent: 'center' },
-    plusWell: { width: 34.2, height: 34.2, alignItems: 'center', justifyContent: 'center' },
-    plusDisc: {
-        width: 18.4,
-        height: 18.4,
-        borderRadius: 9.2,
-        backgroundColor: colors.sheet,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+  card: {
+    height: space.cardHeight,
+    backgroundColor: colors.card,
+    borderRadius: space.cardRadius,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 12.3,
+    paddingRight: 6,
+    marginTop: space.pillToCard,
+  },
+  chip: {
+    width: 31,
+    height: 31,
+    borderRadius: 15.5,
+    backgroundColor: colors.discBlue,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  chipGlyph: { fontSize: 15.2, lineHeight: 19.3 },
+  text: { flexShrink: 1, marginLeft: 8, justifyContent: 'center' },
+  title: { ...typo.taskTitle, color: colors.ink },
+  caption: { ...typo.caption, color: colors.ink },
+  // The completion control's own box is the 20 dp ring at x344.2 (centre 354.2); hitSlop widens the touch.
+  circleSlot: { marginLeft: 'auto', marginRight: 6.8, width: 20, height: 20, alignItems: 'center', justifyContent: 'center' },
+  placeholderCard: {
+    height: space.cardHeight,
+    borderRadius: space.cardRadius,
+    borderWidth: space.dashWidth,
+    borderStyle: 'dashed',
+    borderColor: colors.dash,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 13.8 - space.dashWidth,
+    paddingRight: 6 - space.dashWidth,
+    marginTop: space.pillToCard,
+  },
+  placeholder: { ...typo.placeholder, color: colors.muted, flex: 1 },
+  // Measured: an 18.4 dp #F6F5F4 disc carrying an 8.5 dp #CDC9C5 cross; the
+  // completion ring is 19.6 dp across with a 1.8 dp stroke.
+  doneDisc: { width: 20, height: 20, borderRadius: 10, backgroundColor: colors.primary, alignItems: 'center', justifyContent: 'center' },
+  plusWell: { width: 34.2, height: 34.2, alignItems: 'center', justifyContent: 'center' },
+  plusDisc: {
+    width: 18.4,
+    height: 18.4,
+    borderRadius: 9.2,
+    backgroundColor: colors.sheet,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

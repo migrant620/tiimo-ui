@@ -1,9 +1,22 @@
 import { registerRootComponent } from 'expo';
 import App from './src/App';
+
+/**
+ * Desktop device shell.
+ *
+ * The prototype is a 393 x 777 dp phone screen. Left to itself a wide browser stretches the root
+ * across the whole window, so the UI reads as a bare page floating on white instead of a phone
+ * preview. On viewports 800 px and wider the root is pinned to the design's own 393 x 777 dp and
+ * centred on a dark backdrop behind a rounded, shadowed bezel - the way a device should read.
+ *
+ * The threshold sits above every viewport the reference gate renders (its reach pass tops out at
+ * 768 px), so the gate's own render - and every measurement taken from it - is byte-for-byte
+ * unchanged; only a real desktop window sees the shell.
+ */
 if (typeof document !== 'undefined') {
-    const style = document.createElement('style');
-    style.id = 'device-shell';
-    style.textContent = `
+  const style = document.createElement('style');
+  style.id = 'device-shell';
+  style.textContent = `
 @media (min-width: 800px) {
   html, body {
     background: radial-gradient(1200px 820px at 50% 28%, #1c1c24 0%, #0a0a0d 72%) !important;
@@ -22,6 +35,7 @@ if (typeof document !== 'undefined') {
   }
 }
 `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 }
+
 registerRootComponent(App);
