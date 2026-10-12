@@ -174,9 +174,9 @@ export const type = {
   /** Start/end times "09:24 AM": 68.8 dp => 16, 20 dp box. */
   timeRange: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 21.1 },
   /** Weekday letter: ~9.4 dp, bold, 12.4 dp box. */
-  weekdayLetter: { fontFamily: fonts.bold, fontSize: 9.92, lineHeight: 13.08 },
+  weekdayLetter: { fontFamily: fonts.bold, fontSize: 8.95, lineHeight: 11.81 },
   /** Day number is Recoleta (proportional figures: "17" is narrower than "16"); Fraunces 17.1 keeps the 17.1 dp width. */
-  weekdayNumber: { fontFamily: fonts.serif, fontSize: 16.25, lineHeight: 25.93 },
+  weekdayNumber: { fontFamily: fonts.serif, fontSize: 17.05, lineHeight: 27.21 },
   /** Small caps actions: "SUGGEST BREAKDOWN" 13.5 medium; "ADD SUB-TASK" 12 medium. */
   smallCaps: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.86 },
   smallCapsMuted: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
