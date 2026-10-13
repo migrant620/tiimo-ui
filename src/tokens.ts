@@ -131,7 +131,7 @@ const serif = (recoletaSize: number, lineHeight: number) => ({
  */
 export const type = {
   /** "Wednesday": Recoleta 28 in a 36 dp box. */
-  dateTitle: serif(26.6, 34.2),
+  dateTitle: serif(28, 36),
   /**
    * Uppercase labels share an 8.73 dp cap height (=> 12.3) and are tracked out;
    * the tracking is what the box width leaves over: 0.39 for the month, ~0.89 for
@@ -166,11 +166,11 @@ export const type = {
   /** "Create a task to start focus": 24 dp box. */
   subtitle: { fontFamily: fonts.regular, fontSize: 17.3, lineHeight: 25.32 },
   /** Focus page task title: Recoleta in a 36 dp box. */
-  focusTitle: serif(26.6, 34.2),
+  focusTitle: serif(28, 36),
   /** "Delete task?": ink 126.9 dp wide => Fraunces 22.6, 32.8 dp box. */
   dialogTitle: { fontFamily: fonts.serif, fontSize: 21.47, lineHeight: 31.16 },
   /** Timer digits are Recoleta 45 in a 52 dp box; Fraunces digits run the same width. */
-  timerDigits: { fontFamily: fonts.serif, fontSize: 42.75, lineHeight: 49.4 },
+  timerDigits: { fontFamily: fonts.serif, fontSize: 46, lineHeight: 53 },
   /** Start/end times "09:24 AM": 68.8 dp => 16, 20 dp box. */
   timeRange: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 21.1 },
   /** Weekday letter: ~9.4 dp, bold, 12.4 dp box. */
