@@ -174,9 +174,9 @@ export const type = {
   /** Start/end times "09:24 AM": 68.8 dp => 16, 20 dp box. */
   timeRange: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 21.1 },
   /** Weekday letter: ~9.4 dp, bold, 12.4 dp box. */
-  weekdayLetter: { fontFamily: fonts.bold, fontSize: 8.95, lineHeight: 11.81 },
+  weekdayLetter: { fontFamily: fonts.bold, fontSize: 9.92, lineHeight: 13.08 },
   /** Day number is Recoleta (proportional figures: "17" is narrower than "16"); Fraunces 17.1 keeps the 17.1 dp width. */
-  weekdayNumber: { fontFamily: fonts.serif, fontSize: 17.05, lineHeight: 27.21 },
+  weekdayNumber: { fontFamily: fonts.serif, fontSize: 16.25, lineHeight: 25.93 },
   /** Small caps actions: "SUGGEST BREAKDOWN" 13.5 medium; "ADD SUB-TASK" 12 medium. */
   smallCaps: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.86 },
   smallCapsMuted: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
@@ -322,7 +322,10 @@ export const nav = {
   barLeft: 18.2,
   barWidth: 232.9,
   barHeight: 53.1,
-  barBottom: 16.9,
+  // R21: the reference XML puts the pill at dp y 756.0..809.1 on the 851 dp frame, i.e. its
+  // bottom edge sits 41.9 dp above the frame bottom, not 16.9. The gate frame only covers
+  // 777 dp, so parse_ref drops this node as out-of-bounds and the gate has never checked it.
+  barBottom: 41.9,
   /** Slots: 75 x 45.1 at x22.2 / 97.2 / 172.5, 4 dp inside the bar. */
   slotWidth: 75,
   slotHeight: 45.1,

@@ -92,7 +92,11 @@ const styles = StyleSheet.create({
   strip: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 16.1,
+    // R21 measured the reference's week strip starting its ink at dp 75.0 while ours
+    // started at 76.0, and the whole calendar block's ink centroid sat 10.7 dp low
+    // (ours 85.99 vs reference 75.34). Pull the strip up by the measured 1.2 dp plus
+    // the slack the month caption was already giving it.
+    marginTop: 14.2,
     paddingHorizontal: 16,
   },
   // 51.55 dp each on the 393 frame; cells share the width on any other screen.
