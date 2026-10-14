@@ -42,10 +42,13 @@ const MENU_GLYPH: Record<string, GlyphName | null> = {
 };
 
 const scrim = 'rgba(0, 0, 0, 0.30)';
-// The delete confirmation blurs the page and dims it lightly: blank page areas
-// read 239..240 over the #FCFCFC surface, i.e. black at ~4.8%. The action menu
-// does NOT blur: its backdrop is a flat 177 with the page still legible.
-const dialogScrim = 'rgba(0, 0, 0, 0.048)';
+// The delete confirmation blurs the page and dims it lightly. The constant below used to read 0.048
+// ("blank page areas read 239..240"), which contradicted this file's own header - the reference
+// backdrop reads 243..246 - and the raster agrees with the header, not the constant: over
+// V8-delete-confirm's backdrop the reference's median is 244 with a 251 light end (y 600-640,
+// x 20-370 dp), while the prototype measured 239 flat. 0.032 over the #FCFCFC surface gives 244.
+// The action menu does NOT blur: its backdrop is a flat 177 with the page still legible.
+const dialogScrim = 'rgba(0, 0, 0, 0.032)';
 // Radius fitted against the reference backdrop (mean abs error over the page
 // areas above and below the panel): 1.5px 8.30, 2px 8.19, 3px 8.34, 5px 8.97.
 const dialogBlur = { backdropFilter: 'blur(2px)', WebkitBackdropFilter: 'blur(2px)' } as object;
