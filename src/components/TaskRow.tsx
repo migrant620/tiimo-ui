@@ -16,7 +16,7 @@ import { colors, space, type as typo } from '../tokens';
 import { PLACEHOLDER_COPY } from '../model';
 import type { Task, TimeOfDay } from '../model';
 
-export function TaskRow({
+function TaskRowImpl({
   task,
   onToggleComplete,
   onOpenMenu,
@@ -55,6 +55,8 @@ export function TaskRow({
     </Pressable>
   );
 }
+
+export const TaskRow = React.memo(TaskRowImpl);
 
 export function PlaceholderRow({
   section,
