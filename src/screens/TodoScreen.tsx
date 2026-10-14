@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     height: space.priorityPillHeight,
     borderRadius: space.priorityPillHeight / 2,
     paddingLeft: 11,
-    paddingRight: 12,
+    paddingRight: 16,
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'flex-start',
