@@ -73,8 +73,11 @@ export const colors = {
   // Progress-arc arrow: reads (217,206,255) on the #9F85FF arc, i.e. white at 60%.
   badgeArrow: 'rgba(255, 255, 255, 0.6)',
   dangerIcon: '#D34D4B',
-  // GET PRO label while a task is focused, sampled (110,114,114).
-  quietInk: '#6E7272',
+  // GET PRO label while a task is focused. R25: the gate measures the reference's own raster for
+  // V6-focus-paused at rgb(94,98,98) while we rendered rgb(110,114,114) (dist 27.7) - the earlier
+  // (110,114,114) sample came from a state where the quiet variant was not the one on screen.
+  // Only `proLabelQuiet` in FocusScreen consumes this token, so the change is contained.
+  quietInk: '#5E6262',
   // Focus ring.
   aura: '#F4F1FD',
   discDefault: '#FAEFE0',
@@ -138,23 +141,32 @@ export const type = {
    * section pills and SUGGEST BREAKDOWN. A 14 dp untracked face matched the widths
    * too, but its caps stood 1.1 dp taller than the reference's.
    */
-  monthCaption: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.39 },
+  // R25: the substitute face runs ~5% wider than the reference's. Measured excess is a near
+  // constant 0.34 dp per character across every run we compared ("SEPTEMBER 2026" +5.5/14,
+  // "Anytime today works" +6.7/19, "MORNING (0)" +4.0/11, "What's happening today?" +8.4/23),
+  // so each tracked token gives back 0.34 dp/char of tracking to land on the reference width.
+  monthCaption: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.05 },
   /**
    * Weights were checked by ink mass (sum of darkness inside the text box, web vs
    * reference): a same-weight pair reads ~1.02, medium against regular ~1.3.
    */
   /** "ANYTIME (0)": 81.1 dp => 14, regular (medium read 1.37), 16 dp box. */
-  section: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.89 },
+  // R25: −0.34 dp/char tracking compensation (see monthCaption). Narrowing the section label
+  // also re-seats the trailing chevron, which the gate had been reading as a padding defect.
+  section: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.55 },
   /** Placeholder copy "Anytime today works": 122.3 dp => 13, regular (medium read 1.22), 16 dp box. */
-  placeholder: { fontFamily: fonts.regular, fontSize: 13.87, lineHeight: 16.88 },
+  placeholder: { fontFamily: fonts.regular, fontSize: 13.87, lineHeight: 16.88, letterSpacing: -0.34 },
   /** Menu rows and form values ("Make a copy", "No repeat"): 20 dp box. */
   body: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 21.1 },
   /** "GET PRO", "Move to list": 14.5 medium (regular read 0.84) in a 20 dp box. */
-  button: { fontFamily: fonts.medium, fontSize: 15.3, lineHeight: 21.1 },
+  // R25: −0.40 dp/char tracking compensation, same measurement basis as monthCaption.
+  button: { fontFamily: fonts.medium, fontSize: 15.3, lineHeight: 21.1, letterSpacing: -0.4 },
   /** Action-menu rows: ink "Make a copy" 80.4 dp => 14.5, regular, 20 dp box. */
   menuRow: { fontFamily: fonts.regular, fontSize: 15.3, lineHeight: 21.1 },
   /** Filled dialog/focus buttons ("Cancel", "Delete", "Create task") read medium. */
-  buttonStrong: { fontFamily: fonts.medium, fontSize: 15.3, lineHeight: 21.1 },
+  // R25: −0.40 dp/char tracking compensation ("Cancel" +2.4/6, "Delete" +2.5/6,
+  // "Create task" +4.5/11 all agree).
+  buttonStrong: { fontFamily: fonts.medium, fontSize: 15.3, lineHeight: 21.1, letterSpacing: -0.4 },
   /** "P0-Mainline-Task" card title: ink 111.6 dp => 14.3 medium, 17.1 dp box. */
   taskTitle: { fontFamily: fonts.medium, fontSize: 15.09, lineHeight: 18.04 },
   /** "30min": 33.8 dp => 12, 14.2 dp box. */
@@ -162,7 +174,8 @@ export const type = {
   /** Form field labels ("Time of day", "Repeat"): 16 dp box. */
   fieldLabel: { fontFamily: fonts.regular, fontSize: 14.24, lineHeight: 16.88 },
   /** Sheet heading "Update task" and group titles ("Sub-tasks"): 24 dp box. */
-  heading: { fontFamily: fonts.medium, fontSize: 17.2, lineHeight: 25.32 },
+  // R25: −0.40 dp/char tracking compensation ("Update task" +4.6/11, "Sub-tasks" +3.7/9).
+  heading: { fontFamily: fonts.medium, fontSize: 17.2, lineHeight: 25.32, letterSpacing: -0.4 },
   /** "Create a task to start focus": 24 dp box. */
   subtitle: { fontFamily: fonts.regular, fontSize: 17.3, lineHeight: 25.32 },
   /** Focus page task title: Recoleta in a 36 dp box. */
@@ -178,7 +191,9 @@ export const type = {
   /** Day number is Recoleta (proportional figures: "17" is narrower than "16"); Fraunces 17.1 keeps the 17.1 dp width. */
   weekdayNumber: { fontFamily: fonts.serif, fontSize: 16.25, lineHeight: 25.93 },
   /** Small caps actions: "SUGGEST BREAKDOWN" 13.5 medium; "ADD SUB-TASK" 12 medium. */
-  smallCaps: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.86 },
+  // R25: same −0.40 dp/char compensation, taken off the existing 0.86 tracking
+  // ("SUGGEST BREAKDOWN" +7.0/17, "ADD SUB-TASK" +4.2/12).
+  smallCaps: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.46 },
   smallCapsMuted: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
   /** Update-task sheet, sizes from ink widths on 03-edit-form.png. */
   floatLabel: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 14.56, paddingHorizontal: 12.25 },
