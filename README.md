@@ -81,7 +81,7 @@ The static output is written to `dist/`. Serve that directory over HTTP or HTTPS
 
 ## Demo build
 
-The published demo at <https://tiimo-ui.edgeone.cool> is built from this repository. It was last rebuilt and redeployed on 2026-10-14 (EdgeOne deployment `dpmc8ceu9jqz`, source revision `9fdca5af`).
+The published demo at <https://tiimo-ui.edgeone.cool> is built from this repository. It was last rebuilt and redeployed on 2026-10-14 (EdgeOne deployment `dp6zyyewsgnb`, source revision `88bfd428`).
 
 ## Scope and limitations
 

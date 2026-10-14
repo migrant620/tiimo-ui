@@ -26,6 +26,10 @@ export const colors = {
   // is set apart by the dimmed backdrop and its radius rather than by being white.
   dialog: '#FCFCFC',
   ink: '#111717',
+  // R26: the gate measures the sheet heading / group titles ("Update task",
+  // "Sub-tasks", "Sub-task timers") at rgb(22,20,18) — warmer and lighter than
+  // the 17,23,23 our plain body ink reads, a 7.7 colour distance on every row.
+  inkHeading: '#161412',
   muted: '#A7A7A7',
   primary: '#9F85FF',
   // Section pill tints, sampled from the pill interiors.

@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
   raised: { backgroundColor: colors.card, ...lift },
   saveCircle: { backgroundColor: colors.primary },
   // Spans only the gap between the two header buttons so it never covers them.
-  title: { ...typo.heading, color: colors.ink, position: 'absolute', top: form.titleTop, left: 64, right: 64, textAlign: 'center' },
+  title: { ...typo.heading, color: colors.inkHeading, position: 'absolute', top: form.titleTop, left: 64, right: 64, textAlign: 'center' },
   field: {
     backgroundColor: colors.surface,
     borderWidth: 1,
@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
   pairField: { position: 'absolute', left: 0, right: 0, top: form.pairFieldTop, height: form.pairFieldHeight },
   pairInput: { ...typo.fieldValue, color: colors.ink, outlineStyle: 'none' } as object,
   card: { backgroundColor: colors.surface, borderRadius: form.cardRadius },
-  cardTitle: { ...typo.heading, color: colors.ink },
+  cardTitle: { ...typo.heading, color: colors.inkHeading },
   suggest: {
     backgroundColor: colors.card,
     borderRadius: 17.1,
@@ -383,7 +383,7 @@ const styles = StyleSheet.create({
   addSubtaskLabel: { ...typo.smallCapsMuted, color: colors.faintInk },
   addLock: { width: 16, height: 16, alignItems: 'center', justifyContent: 'center' },
   divider: { position: 'absolute', left: 0, right: 0, height: 0.7, backgroundColor: colors.dash },
-  toggleTitle: { ...typo.toggleTitle, color: colors.ink },
+  toggleTitle: { ...typo.toggleTitle, color: colors.inkHeading },
   toggleCaption: { ...typo.toggleCaption, color: colors.subtleInk },
   // Reference (03-edit-form.png): thumb x317.8..337.8, y543.8..563.8 with a soft
   // shadow; rail runs to x349.5, 14 dp tall, centred on the box (y553.9).
