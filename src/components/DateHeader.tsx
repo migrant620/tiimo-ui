@@ -88,10 +88,7 @@ const styles = StyleSheet.create({
     marginTop: 13.1,
   },
   title: { ...typo.dateTitle, color: colors.ink },
-  // R23: the substitute font renders "SEPTEMBER 2026" ~5.5 dp wider than the
-  // reference; the caption is right-aligned, so it spills ~5.5 dp left of its box.
-  // A small negative track reclaims that width and re-seats the run.
-  month: { ...typo.monthCaption, color: colors.ink, marginBottom: 10.1, letterSpacing: -0.5 },
+  month: { ...typo.monthCaption, color: colors.ink, marginBottom: 10.1 },
   strip: {
     flexDirection: 'row',
     justifyContent: 'center',
