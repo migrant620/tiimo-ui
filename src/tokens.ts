@@ -149,7 +149,7 @@ export const type = {
   // constant 0.34 dp per character across every run we compared ("SEPTEMBER 2026" +5.5/14,
   // "Anytime today works" +6.7/19, "MORNING (0)" +4.0/11, "What's happening today?" +8.4/23),
   // so each tracked token gives back 0.34 dp/char of tracking to land on the reference width.
-  monthCaption: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.05 },
+  monthCaption: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: -0.25 },
   /**
    * Weights were checked by ink mass (sum of darkness inside the text box, web vs
    * reference): a same-weight pair reads ~1.02, medium against regular ~1.3.
