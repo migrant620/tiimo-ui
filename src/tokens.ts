@@ -341,10 +341,18 @@ export const nav = {
   barLeft: 18.2,
   barWidth: 232.9,
   barHeight: 53.1,
-  // R21: the reference XML puts the pill at dp y 756.0..809.1 on the 851 dp frame, i.e. its
-  // bottom edge sits 41.9 dp above the frame bottom, not 16.9. The gate frame only covers
-  // 777 dp, so parse_ref drops this node as out-of-bounds and the gate has never checked it.
-  barBottom: 41.9,
+  /**
+   * R21 measured 41.9 from the 851 dp capture frame: 851 - 809.1. But the app does not
+   * render inside the 851 dp capture - it renders inside the 777 dp gate frame (the
+   * reference raster is cropped to status..status+777 before it is ever compared), and
+   * inside that frame the pill's bottom sits 777 - 760.1 = 16.9 dp up.
+   *
+   * R29 measured the mistake instead of reasoning about it. On V1-today-clean at x348 dp
+   * (the avatar well centre) the reference paint starts at y710 dp and this build started
+   * at y686 - the whole band was floating 24 dp too high, on all four nav states. R21's
+   * own note is what hid it: the node was dropped as out-of-bounds, so no axis ever looked.
+   */
+  barBottom: 16.9,
   /** Slots: 75 x 45.1 at x22.2 / 97.2 / 172.5, 4 dp inside the bar. */
   slotWidth: 75,
   slotHeight: 45.1,
