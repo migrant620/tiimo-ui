@@ -40,10 +40,14 @@ const styles = StyleSheet.create({
     marginTop: space.headerTop,
     justifyContent: 'center',
   },
-  /** Reference bounds x137.9..255.4, y16..56; label starts 24 dp in. */
+  /** Reference bounds x137.9..255.4, y16..56; label starts 24 dp in.
+   *  R28: the pill's own box is 117.5 x 40 on both sides, so this is a view box against a
+   *  view box and the 1.1 dp gap is a real offset, not a run-box artefact - centring the
+   *  width puts the left edge on 137.75 and the reference reads 137.9, i.e. 0.15 dp right of
+   *  centre. The old -0.9 was a correction in the wrong direction. */
   proPill: {
     position: 'absolute',
-    left: (frame.width - PRO_W) / 2 - 0.9,
+    left: (frame.width - PRO_W) / 2 + 0.15,
     width: PRO_W,
     height: CIRCLE,
     borderRadius: CIRCLE / 2,

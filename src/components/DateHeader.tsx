@@ -94,9 +94,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // R21 measured the reference's week strip starting its ink at dp 75.0 while ours
     // started at 76.0, and the whole calendar block's ink centroid sat 10.7 dp low
-    // (ours 85.99 vs reference 75.34). Pull the strip up by the measured 1.2 dp plus
-    // the slack the month caption was already giving it.
-    marginTop: 14.2,
+    // (ours 85.99 vs reference 75.34). That correction overshot: R28 measures the strip's
+    // own cells, whose boxes are the same shape on both sides (51.7 x 50.6 against
+    // 51.5 x 50.6, so this is a view box against a view box, not a run against a box),
+    // and all seven sit 1.9 dp too high - reference y 121.2, ours 119.3 on V1 through V8.
+    // The 1.2 dp is therefore given back, plus the 1.9 dp the cells are actually out by.
+    marginTop: 16.1,
     paddingHorizontal: 16,
   },
   // 51.55 dp each on the 393 frame; cells share the width on any other screen.
