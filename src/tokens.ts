@@ -174,9 +174,9 @@ export const type = {
   /** "P0-Mainline-Task" card title: ink 111.6 dp => 14.3 medium, 17.1 dp box. */
   taskTitle: { fontFamily: fonts.medium, fontSize: 15.09, lineHeight: 18.04 },
   /** "30min": 33.8 dp => 12, 14.2 dp box. */
-  caption: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 14.77 },
+  caption: { fontFamily: fonts.regular, fontSize: 12.3, lineHeight: 14.77 },
   /** Form field labels ("Time of day", "Repeat"): 16 dp box. */
-  fieldLabel: { fontFamily: fonts.regular, fontSize: 14.24, lineHeight: 16.88 },
+  fieldLabel: { fontFamily: fonts.regular, fontSize: 13.6, lineHeight: 16.88 },
   /** Sheet heading "Update task" and group titles ("Sub-tasks"): 24 dp box. */
   // R25: −0.40 dp/char tracking compensation ("Update task" +4.6/11, "Sub-tasks" +3.7/9).
   heading: { fontFamily: fonts.medium, fontSize: 17.2, lineHeight: 25.32, letterSpacing: -0.4 },
@@ -200,7 +200,7 @@ export const type = {
   smallCaps: { fontFamily: fonts.regular, fontSize: 12.98, lineHeight: 16.88, letterSpacing: 0.46 },
   smallCapsMuted: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
   /** Update-task sheet, sizes from ink widths on 03-edit-form.png. */
-  floatLabel: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 14.56, paddingHorizontal: 12.25 },
+  floatLabel: { fontFamily: fonts.regular, fontSize: 12.3, lineHeight: 14.56, paddingHorizontal: 12.25 },
   edgeLabel: { fontFamily: fonts.regular, fontSize: 12.66, lineHeight: 16.88, paddingHorizontal: 4.2 },
   fieldValue: { fontFamily: fonts.regular, fontSize: 16.88, lineHeight: 22.68 },
   nameInput: serif(17.53, 22.8),
@@ -223,8 +223,8 @@ export const type = {
    * numbers are regular.
    */
   calendarSelect: { fontFamily: fonts.medium, fontSize: 13.71, lineHeight: 16.88 },
-  calendarDate: serif(22.8, 31.35),
-  calendarMonth: { fontFamily: fonts.medium, fontSize: 15.82, lineHeight: 21.1 },
+  calendarDate: { fontFamily: fonts.serif, fontSize: 21.6, lineHeight: 31.35, letterSpacing: -0.30 },
+  calendarMonth: { fontFamily: fonts.medium, fontSize: 15.82, lineHeight: 21.1, letterSpacing: 0.21 },
   calendarWeekday: { fontFamily: fonts.medium, fontSize: 12.66, lineHeight: 16.88 },
   calendarDay: { fontFamily: fonts.regular, fontSize: 15.82, lineHeight: 21.1 },
 } as const;
