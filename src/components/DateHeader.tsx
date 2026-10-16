@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     marginTop: 13.1,
   },
   title: { ...typo.dateTitle, color: colors.ink },
-  month: { ...typo.monthCaption, color: colors.ink, marginBottom: 10.1 },
+  month: { ...typo.monthCaption, color: colors.ink, marginBottom: 10.1, paddingLeft: 4.2 },
   strip: {
     flexDirection: 'row',
     justifyContent: 'center',
