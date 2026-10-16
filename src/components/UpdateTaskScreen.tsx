@@ -370,7 +370,7 @@ const styles = StyleSheet.create({
   cardTitle: { ...typo.heading, color: colors.inkHeading },
   suggest: {
     backgroundColor: colors.card,
-    borderRadius: 17.1,
+    borderRadius: 18.9,
     borderWidth: 1.1,
     borderColor: colors.hairline,
     flexDirection: 'row',
