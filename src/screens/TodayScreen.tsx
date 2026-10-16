@@ -36,9 +36,11 @@ interface Props {
   onOpenMenu: (task: Task) => void;
   onToggleComplete: (task: Task) => void;
   onQuickAdd: (section: TimeOfDay) => void;
+  /** R32: forwarded to the header's gear, which used to be a dead key. */
+  onSettings?: () => void;
 }
 
-export function TodayScreen({ now, tasks, onOpenMenu, onToggleComplete, onQuickAdd }: Props) {
+export function TodayScreen({ now, tasks, onOpenMenu, onToggleComplete, onQuickAdd, onSettings }: Props) {
   const [collapsed, setCollapsed] = React.useState<Record<string, boolean>>({ done: true });
   const [selectedIso, setSelectedIso] = React.useState(() => isoOf(now));
   const [weekShift, setWeekShift] = React.useState(0);
@@ -51,7 +53,7 @@ export function TodayScreen({ now, tasks, onOpenMenu, onToggleComplete, onQuickA
 
   return (
     <View style={styles.page}>
-      <TodayHeader onAdd={() => onQuickAdd('anytime')} />
+      <TodayHeader onAdd={() => onQuickAdd('anytime')} onSettings={onSettings} />
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}

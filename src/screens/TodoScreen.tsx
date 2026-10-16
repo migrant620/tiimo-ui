@@ -71,13 +71,13 @@ function PriorityPill({
   );
 }
 
-export function TodoScreen({ onQuickAdd }: { onQuickAdd: () => void }) {
+export function TodoScreen({ onQuickAdd, onSettings }: { onQuickAdd: () => void; onSettings?: () => void }) {
   const [collapsed, setCollapsed] = React.useState<Record<string, boolean>>({});
   const toggle = (key: string) => setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
 
   return (
     <View style={styles.page}>
-      <TodayHeader onAdd={onQuickAdd} />
+      <TodayHeader onAdd={onQuickAdd} onSettings={onSettings} />
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}

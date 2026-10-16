@@ -12,15 +12,18 @@ import { SparkleGlyph } from './Glyphs';
 import { Icon } from './Icon';
 import { colors, frame, lift, space, type as typo } from '../tokens';
 
-export function TodayHeader({ onAdd }: { onAdd: () => void }) {
+export function TodayHeader({ onAdd, onSettings }: { onAdd: () => void; onSettings?: () => void }) {
   return (
     <View style={styles.row}>
+      {/* R32: the gear was `onPress={() => undefined}` — a labelled 40 dp circle on every
+          page that did nothing. It now opens screens/SettingsScreen.tsx. The prop is
+          optional so an existing caller keeps compiling; App.tsx passes it on every page. */}
       <Pressable accessibilityLabel="Get Pro" onPress={() => undefined} style={styles.proPill}>
         <Text style={styles.proLabel}>GET PRO</Text>
         <SparkleGlyph size={18} color={colors.primary} />
       </Pressable>
       <View style={styles.controls}>
-        <Pressable accessibilityLabel="Settings" onPress={() => undefined} style={styles.circle}>
+        <Pressable accessibilityLabel="Settings" onPress={onSettings ?? (() => undefined)} style={styles.circle}>
           <Icon name="cog" size={24} color={colors.ink} />
         </Pressable>
         <Pressable accessibilityLabel="Add task" onPress={onAdd} style={styles.circle}>

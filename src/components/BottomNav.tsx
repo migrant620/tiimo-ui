@@ -60,9 +60,16 @@ function Avatar() {
 interface Props {
   active: Tab;
   onSelect: (tab: Tab) => void;
+  /**
+   * R32: the avatar well was `onPress={() => undefined}` — a labelled 54.2 dp
+   * target that did nothing. Profile is deliberately NOT a `Tab`: the three
+   * pill slots above are typed by `Tab`, and the avatar is a separate control
+   * outside the pill, so it gets its own callback and `App.tsx` owns the route.
+   */
+  onProfile?: () => void;
 }
 
-export function BottomNav({ active, onSelect }: Props) {
+export function BottomNav({ active, onSelect, onProfile }: Props) {
   const slot = (tab: Tab, content: React.ReactNode, label: string) => {
     const isActive = active === tab;
     return (
@@ -84,7 +91,12 @@ export function BottomNav({ active, onSelect }: Props) {
         {slot('today', <CalendarSlot active={active === 'today'} />, 'Today')}
         {slot('focus', <CrescentGlyph size={27} color={active === 'focus' ? colors.ink : colors.navInactive} />, 'Focus')}
       </View>
-      <Pressable accessibilityLabel="Profile" onPress={() => undefined} style={styles.avatarSlot}>
+      <Pressable
+        accessibilityLabel="Profile"
+        accessibilityState={{ selected: false }}
+        onPress={onProfile ?? (() => undefined)}
+        style={styles.avatarSlot}
+      >
         <Avatar />
       </Pressable>
     </View>
